@@ -71,6 +71,7 @@ def login():
 
 
 def insert_sensor_data(timestamp, temperature, pressure, voltage, anomaly):
+    conn = None
     try:
         conn = mysql.connector.connect(
             host="localhost",
