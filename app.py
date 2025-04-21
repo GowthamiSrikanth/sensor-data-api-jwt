@@ -99,7 +99,7 @@ def insert_sensor_data(timestamp, temperature, pressure, voltage, anomaly):
         return False
 
     finally:
-        if conn.is_connected():
+        if conn is not None and conn.is_connected():
             cursor.close()
             conn.close()
 
